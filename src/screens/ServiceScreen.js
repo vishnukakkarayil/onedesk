@@ -4,44 +4,17 @@ import { globalStyles, SCREEN_WIDTH, Colors } from '../styles/globalStyles'
 import HandleSafeAreaView from '../components/HandleSafeAreaView'
 import GradientText from '../components/GradientText'
 import FooterIcons from '../components/FooterIcons'
-// import CustomCarousel from '../components/CustomCarousel'
+import CustomCarousel from '../components/CustomCarousel'
 import BackgroundCircle from '../assets/images/backgroundcircle.svg'
-import DashboardIcon from '../assets/images/dashboardblack.svg';
+import CloseIcon from '../assets/images/closeblack.svg';
 
 const ServiceScreen = () => {
-    const { width, height } = Dimensions.get('window');
-    const [text, setText] = useState('');
     const footerData = {
-        leftIcon: [
-            {
-                id: 1,
-                icon: <DashboardIcon />,
-                action: () => {
-                    console.log('Dashboard icon clicked');
-                },
-                selected: true,
-            },
-            {
-                id: 2,
-                icon: <DashboardIcon />,
-                action: () => {
-                    console.log('Admin icon clicked');
-                },
-                selected: false,
-            },
-            {
-                id: 3,
-                icon: <DashboardIcon />,
-                action: () => {
-                    console.log('User icon clicked');
-                },
-                selected: false,
-            },
-        ],
+        leftIcon: [],
         rightIcon: [
             {
                 id: 1,
-                icon: <DashboardIcon />,
+                icon: <CloseIcon />,
                 action: () => {
                     console.log('Right Dashboard icon clicked');
                 },
@@ -63,11 +36,11 @@ const ServiceScreen = () => {
                                 <Text style={globalStyles.appSubTitle}>Describe your Query</Text>
                                 <Text style={[globalStyles.appText, { marginTop: 8 }]}>It helps the support team understand the problem clearly and take appropriate action quickly.</Text>
                             </View>
-                            <View style={{ marginVertical: 25 }}>
+                            <View style={{ marginTop: 25, marginBottom: 10 }}>
                                 <GradientText style={globalStyles.gradientText}>Select one option to continue,</GradientText>
                             </View>
                             <View style={styles.carouselwrap}>
-                                {/* <CustomCarousel /> */}
+                                <CustomCarousel />
                             </View>
 
                         </View>
@@ -85,9 +58,7 @@ const styles = StyleSheet.create({
         flex: 1,
         width: '100%',
         marginTop: 130,
-        // paddingHorizontal: 30,
         justifyContent: 'space-between',
-        // height: height,
     },
     textArea: {
         borderBottomWidth: 1,
@@ -97,7 +68,6 @@ const styles = StyleSheet.create({
         fontFamily: 'SpaceGrotesk-Regular',
         color: '#000',
         lineHeight: 22,
-
     },
     descriptionWrap: {
         marginTop: 30,
@@ -109,7 +79,6 @@ const styles = StyleSheet.create({
         fontSize: 17,
         color: '#000',
         fontFamily: 'SpaceGrotesk-SemiBold',
-        // lineHeight: 22,
     },
     uploadFile: {
         width: '100%',

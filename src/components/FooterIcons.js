@@ -1,9 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 
 const FooterIcons = ({ data }) => {
     return (
-        <View style={styles.footerIconWrap}>
+        <View style={
+            [styles.footerIconWrap,
+            {
+                justifyContent: data.leftIcon.length > 0 ? 'space-between' : 'flex-end'
+
+            }]}>
             {data.leftIcon.length > 0 &&
                 <View style={styles.iconGroup}>
                     {
@@ -29,15 +34,11 @@ const FooterIcons = ({ data }) => {
 const styles = StyleSheet.create({
     footerIconWrap: {
         flexDirection: 'row',
-        justifyContent: 'space-between',
         alignItems: 'center',
         width: '100%',
-        // paddingHorizontal: 10,
-        // marginTop: 20,
     },
     iconGroup: {
         flexDirection: 'row',
-        // justifyContent: 'space-between',
         alignItems: 'center',
         columnGap: 10,
         width: 'auto',
@@ -61,7 +62,6 @@ const styles = StyleSheet.create({
         borderRadius: 50,
         justifyContent: 'center',
         alignItems: 'center',
-        // padding: 20
     },
 })
 

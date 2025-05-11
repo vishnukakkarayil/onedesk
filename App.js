@@ -6,6 +6,7 @@
  */
 
 import React, { useEffect } from 'react';
+import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import LoginScreen from './src/screens/LoginScreen';
@@ -31,12 +32,12 @@ const App = () => {
   console.log('object----')
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="ServiceScreen">
-        {/* <Stack.Screen
+      <Stack.Navigator initialRouteName="LoginScreen">
+        <Stack.Screen
           name="LoginScreen"
           component={LoginScreen}
           options={{ headerShown: false }}
-        /> */}
+        />
         {/* <Stack.Screen
           name="DashboardScreen"
           component={DashboardScreen}
@@ -47,11 +48,11 @@ const App = () => {
           component={AddTicketScreen}
           options={{ headerShown: false }}
         /> */}
-        <Stack.Screen
+        {/* <Stack.Screen
           name="ServiceScreen"
           component={ServiceScreen}
           options={{ headerShown: false }}
-        />
+        /> */}
         {/* Add other screens here */}
       </Stack.Navigator>
     </NavigationContainer>
